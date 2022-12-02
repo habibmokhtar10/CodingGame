@@ -26,7 +26,6 @@ describe("Codind Game Test Cases", () => {
     cy.log("Acceder au site web skyscanner");
     cy.get(".tF2Cxc > .yuRUbf > a > .LC20lb").click();
     cy.get("#acceptCookieButton").click();
-    //Verifier les elements
 
     //selectionner Aller Simple
     cy.log("selectionner Aller Simple");
