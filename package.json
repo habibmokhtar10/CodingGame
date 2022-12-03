@@ -9,6 +9,7 @@
   "author": "Habib",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.9.0"
+    "cypress": "^10.9.0",
+    "cypress-mochawesome-reporter": "^3.2.3"
   }
 }
