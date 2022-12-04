@@ -1,15 +1,18 @@
 {
-  "name": "cypressautomation",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@cypress/browserify-preprocessor": "latest"
+  },
+  "name": "browserify-cjs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "cypress.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Habib",
+  "author": "habib",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "cypress": "^10.9.0",
-    "cypress-mochawesome-reporter": "^3.2.3"
+    "cypress": "^11.2.0"
   }
 }

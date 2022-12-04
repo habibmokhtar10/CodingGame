@@ -1,23 +1,24 @@
 const { defineConfig } = require("cypress");
+const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
+const browserify = require("@badeball/cypress-cucumber-preprocessor/browserify");
+
+async function setupNodeEvents(on, config) {
+  await preprocessor.addCucumberPreprocessorPlugin(on, config);
+
+  on("file:preprocessor", browserify.default(config));
+
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config;
+}
 
 module.exports = defineConfig({
-  projectId: "k5ai1c",
-  viewportWidth: 1200,
-  viewportHeight: 760,
   chromeWebSecurity: false,
-
-  reporter: "cypress-mochawesome-reporter",
-  reporterOptions: {
-    charts: true,
-    reportPageTitle: "custom-title",
-    embeddedScreenshots: true,
-    inlineAssets: true,
-    saveAllAttempts: false,
-  },
-
+  pageLoadTimeout: 200000,
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
-    setupNodeEvents(on, config) {},
+    specPattern: "**/*.feature",
+    supportFile: false,
+    setupNodeEvents,
   },
 });
+
+
