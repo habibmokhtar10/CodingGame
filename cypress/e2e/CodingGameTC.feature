@@ -8,7 +8,7 @@ Feature:  Flight search Feature
     When  A user select one-way Flight
     When  A user set "Paris Orly" as departure
     When  A user set "Tanger" as destination
-    When  A user set departure date as Day:"08",Month:"septembre",Year:"2023"
+    When  A user set departure date as Day:"08",Month:"décembre",Year:"2023"
     When  A user select direct Flight
     When  A user clicks on search button
     Then  The SRP is openened ,all flights displayed parts from ORY to TNG and all flights are direct  
