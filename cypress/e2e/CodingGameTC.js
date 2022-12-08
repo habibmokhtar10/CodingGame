@@ -43,7 +43,8 @@ Given("A user opens the website", function () {
 
 When("A user select one-way Flight", () => {
   Sk.consent1();
-  Sk.Selectoneway;
+  cy.wait(2000);
+  Sk.Selectoneway();
 });
 When("A user set {string} as departure", (Departure) => {
   Sk.SetDeparture(Departure);

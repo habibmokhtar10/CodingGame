@@ -23,7 +23,7 @@ class skyscanner {
     TransitLabel: () => cy.get(".LegInfo_stopsLabelRed__NTY2Y"),
     Destinations: () =>
       cy.get(
-        ".LegInfo_routePartialArrive__Y2U1N > :nth-child(2) > div > .BpkText_bpk-text__ZWIzZ"
+        ".LegInfo_routePartialArrive__Y2U1N > span.BpkText_bpk-text__ZWIzZ.BpkText_bpk-text--body-default__MzkyN"
       ),
     Departures: () =>
       cy.get(
@@ -95,7 +95,7 @@ class skyscanner {
     this.elements.WebsiteLink().click({ multiple: true });
   }
   Selectoneway() {
-    this.elements.OneWay().click({ force: true });
+    this.elements.OneWay().click({ multiple: true });
   }
 
   consent1() {
