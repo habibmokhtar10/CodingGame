@@ -23,7 +23,7 @@ class skyscanner {
     TransitLabel: () => cy.get(".LegInfo_stopsLabelRed__NTY2Y"),
     Destinations: () =>
       cy.get(
-        ".LegInfo_routePartialArrive__Y2U1N > span.BpkText_bpk-text__ZWIzZ.BpkText_bpk-text--body-default__MzkyN "
+        ".LegInfo_routePartialArrive__Y2U1N > :nth-child(2) > div > .BpkText_bpk-text__ZWIzZ"
       ),
     Departures: () =>
       cy.get(
@@ -60,6 +60,7 @@ class skyscanner {
       .invoke("prop", "indeterminate", true)
       .uncheck()
       .should("not.be.checked");
+    cy.wait(2000);
     this.elements.DirectFlightCheckbox().click();
   }
   SetDate(D, M, Y) {
@@ -105,7 +106,10 @@ class skyscanner {
         cy.get(".UserPreferencesContent_acceptButton__NjQxZ").click();
         cy.wait(2000);
         cy.go("back");
+        cy.reload();
+        cy.wait(2000);
         cy.get("#L2AGLb > .QS5gu").click();
+        this.elements.WebsiteLink().click();
       }
     });
   }

@@ -8,13 +8,11 @@ import GooglePage from "./Pages/GooglePage";
 import skyscanner from "./Pages/skyscanner";
 
 Cypress.on("uncaught:exception", (err, runnable) => {
-  // returning false here prevents Cypress from
-  // failing the test
   return false;
 });
 const Gp = new GooglePage();
 const Sk = new skyscanner();
-// let url = Cypress.config().baseUrl;
+
 Given("A user opens Google page", () => {
   cy.clearCookies();
   cy.clearLocalStorage();
@@ -38,6 +36,7 @@ Given("A user opens the website", function () {
   Sk.AcessWebsite();
   cy.wait(5000);
   Sk.consent1();
+  cy.wait(3000);
   Sk.consent();
 });
 //
