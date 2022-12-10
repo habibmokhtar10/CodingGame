@@ -95,7 +95,7 @@ class skyscanner {
     this.elements.WebsiteLink().click({ multiple: true });
   }
   Selectoneway() {
-    this.elements.OneWay().click({ multiple: true });
+    this.elements.OneWay().click({ force: true });
   }
 
   consent1() {
