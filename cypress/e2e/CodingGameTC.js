@@ -67,14 +67,14 @@ When("A user clicks on search button", () => {
   Sk.consent();
 });
 Then(
-  "The SRP is openened ,all flights displayed parts from ORY to TNG and all flights are direct",
-  () => {
+  "The SRP is openened ,all flights displayed parts from {string} to {string} and all flights are direct",
+  (Dep, Dest) => {
     Sk.VerifyDirectFlights();
 
     //
     cy.wait(3000);
-    Sk.VerifyDestinations();
+    Sk.VerifyDestinations(Dest);
     //Verifier tous les vols Partent de ORY
-    Sk.VerifyDepartures();
+    Sk.VerifyDepartures(Dep);
   }
 );

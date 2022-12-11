@@ -11,5 +11,5 @@ Feature:  Flight search Feature
     When  A user set departure date as Day:"29",Month:"décembre",Year:"2022"
     When  A user select direct Flight
     When  A user clicks on search button
-    Then  The SRP is openened ,all flights displayed parts from ORY to TNG and all flights are direct  
+    Then  The SRP is openened ,all flights displayed parts from "ORY" to "TNG" and all flights are direct  
   
